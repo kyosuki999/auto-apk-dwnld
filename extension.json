@@ -1,0 +1,9 @@
+{
+  "name": "auto-apk-dwnld",
+  "displayName": "Auto APK Downloader",
+  "version": "0.1.0",
+  "description": "Paste a GitHub repo URL and automatically download the best APK (ARM64-first).",
+  "author": "kyosuki999",
+  "main": "index.js",
+  "type": "extension"
+}

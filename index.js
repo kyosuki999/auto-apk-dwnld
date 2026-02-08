@@ -30,7 +30,7 @@ export async function onResolve(ctx) {
     const best = selectBestApk(apks);
     if (!best) return;
 
-    ctx.res = {
+    return = {
       name: best.name,
       files: [
         {

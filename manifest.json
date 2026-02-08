@@ -1,5 +1,6 @@
 {
   "name": "auto-apk-dwnld",
+  "tittle" "Github APK Downloader",
   "displayName": "Auto APK Downloader",
   "version": "0.1.0",
   "description": "Paste a GitHub repo URL and automatically download the best APK (ARM64-first).",

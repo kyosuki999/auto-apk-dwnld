@@ -29,17 +29,22 @@ export async function onResolve(ctx) {
 
     const best = selectBestApk(apks);
     if (!best) return;
-
-    ctx.res = {
+    
+ctx.res = {
+  name: best.name,
+  files: [
+    {
       name: best.name,
-      files: [
-        {
-          name: best.name,
-          size: best.size,
-          req: { url: best.browser_download_url }
-        }
-      ]
-    };
+      size: best.size,
+      req: {
+        url: best.browser_download_url,
+        method: "GET"
+      }
+    }
+  ]
+};
+
+ctx.resolved = true;
   } catch (e) {
     console.error("APK Auto Downloader error:", e.message);
   }

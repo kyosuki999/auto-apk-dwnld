@@ -30,7 +30,7 @@ export async function onResolve(ctx) {
     const best = selectBestApk(apks);
     if (!best) return;
 
-    return = {
+    ctx.res = {
       name: best.name,
       files: [
         {
@@ -53,13 +53,8 @@ function selectBestApk(apks) {
     const name = apk.name.toLowerCase();
     let score = 0;
 
-    // ARM64 prioridad máxima
     if (name.match(/arm64|arm64-v8a|aarch64/)) score += 100;
-
-    // Universal
     if (name.match(/universal|all|fat|noarch/)) score += 50;
-
-    // ARMv7 último recurso
     if (name.match(/armeabi|armeabi-v7a|armv7|arm7|v7/)) score += 10;
 
     if (score > bestScore) {
